@@ -1,0 +1,8 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read and write to all users without authentication
+    match /complaints/{complaintId} {
+      allow read, write: if true;
+    }
+  }
+}
